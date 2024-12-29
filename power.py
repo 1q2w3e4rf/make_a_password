@@ -6,7 +6,7 @@ class PasswordGame(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Игра 'Создай Пароль'")
-        self.geometry("500x400")
+        self.geometry("800x600")
 
         self.all_questions = [
             {"text": "Пароль должен содержать не менее 8 символов", "check": lambda password: len(password) >= 8},
@@ -28,7 +28,6 @@ class PasswordGame(tk.Tk):
             {"text": "Пароль должен содержать ваше любимое число", "check": self.check_fav_number},
             {"text": "Пароль должен содержать как минимум три разных символа из разных регистров", "check": self.check_three_diff_char},
             {"text": "Пароль должен содержать  день недели", "check": self.check_day_of_week},
-            {"text": "Пароль должен содержать только латинские буквы", "check": self.check_latin_letters},
             {"text": "Пароль должен содержать как минимум два повторяющихся символа, но не подряд", "check": self.check_two_repeating_chars},
             {"text": "Пароль должен содержать как минимум одну гласную и одну согласную букву", "check": self.check_vowel_consonant},
             {"text": "Пароль должен состоять из 2 слов, разделенных дефисом", "check": self.check_two_word_hyphen},
@@ -38,7 +37,7 @@ class PasswordGame(tk.Tk):
             {"text": "Пароль должен состоять из года рождения Пушкина", "check": lambda password: "1799" in password.lower()},
             {"text": "Пароль должен состоять из год смерти Николай II", "check": lambda password: "1918" in password.lower()},
             {"text": "Пароль должен состоять из последней династии которая была в России", "check": lambda password: "романовы" in password.lower()},
-
+            {"text": "Пароль должен содержать как минимум год создания линукса", "check": lambda password: "1991" in password.lower()},
         ]
         
         self.displayed_questions = []
